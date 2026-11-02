@@ -1,0 +1,46 @@
+{
+  "name": "@hermeticacomms/sdk-capacitor",
+  "version": "0.1.0",
+  "description": "Hermetica for Capacitor and Ionic: events, consent, native push tokens, in-app messages",
+  "license": "MIT",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hermeticacomms/hermetica-capacitor.git"
+  },
+  "homepage": "https://github.com/hermeticacomms/hermetica-capacitor#readme",
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "vitest run",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@hermeticacomms/sdk-browser": "^0.1.0"
+  },
+  "devDependencies": {
+    "happy-dom": "^21.0.4",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.5"
+  },
+  "peerDependencies": {
+    "@capacitor/push-notifications": ">=5"
+  },
+  "peerDependenciesMeta": {
+    "@capacitor/push-notifications": {
+      "optional": true
+    }
+  }
+}

@@ -1,0 +1,25 @@
+name: ci
+on:
+  push: { branches: [main] }
+  pull_request:
+permissions: { contents: read }
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with: { node-version: 24 }
+      # Until sdk-browser is on npm (first release), test against the browser repo's main.
+      - run: |
+          spec=$(node -p "require('./package.json').dependencies['@hermeticacomms/sdk-browser']")
+          if ! npm view "@hermeticacomms/sdk-browser@$spec" version >/dev/null 2>&1; then
+            git clone -q --depth 1 https://github.com/hermeticacomms/hermetica-browser ../browser
+            (cd ../browser && npm install --no-audit --no-fund && npm run build)
+            node -e "const f='package.json',p=JSON.parse(require('fs').readFileSync(f));p.dependencies['@hermeticacomms/sdk-browser']='file:../browser';require('fs').writeFileSync(f,JSON.stringify(p,null,2))"
+          fi
+      - run: npm install --no-audit --no-fund
+      - run: npm run typecheck
+      - run: npm test
+      - run: npm run build
+      - run: npm run size --if-present
