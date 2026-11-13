@@ -34,7 +34,7 @@ const status = (p: Permission): NonNullable<AppPushToken['enablementStatus']> =>
   p.receive === 'granted' ? 'AUTHORIZED' : p.receive === 'denied' ? 'DENIED' : 'NOT_DETERMINED';
 
 /**
- * Hermetica for Capacitor (and Ionic): the browser SDK runs as is in the WebView (consent gate, batching, retries with one
+ * Hermeticor for Capacitor (and Ionic): the browser SDK runs as is in the WebView (consent gate, batching, retries with one
  * Idempotency-Key per batch); this adds the native push token from @capacitor/push-notifications, push open tracking, and in-app
  * messages for ios / android. Tapped notifications go to `onDeepLink`.
  */
