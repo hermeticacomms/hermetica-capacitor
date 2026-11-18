@@ -1,4 +1,4 @@
-# @hermeticacomms/sdk-capacitor
+# @hermeticor/sdk-capacitor
 
 Hermeticor for Capacitor and Ionic apps. The browser SDK runs unchanged in the WebView (consent gate, batching, retries with one
 `Idempotency-Key` per batch); this package adds native push tokens from `@capacitor/push-notifications`, push open tracking, and
@@ -7,7 +7,7 @@ in-app messages targeted at the app's platform.
 ```ts
 import { Capacitor } from '@capacitor/core';
 import { PushNotifications } from '@capacitor/push-notifications';
-import { createCapacitorClient } from '@hermeticacomms/sdk-capacitor';
+import { createCapacitorClient } from '@hermeticor/sdk-capacitor';
 
 const hm = createCapacitorClient({
   siteKey: 'hm_pk_...', endpoint: 'https://api.example.com',

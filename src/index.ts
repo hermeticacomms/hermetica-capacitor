@@ -1,7 +1,7 @@
 /// <reference lib="dom" />
-import { createHybridClient, type AppPushToken, type HybridClient, type HybridOptions } from '@hermeticacomms/sdk-browser';
+import { createHybridClient, type AppPushToken, type HybridClient, type HybridOptions } from '@hermeticor/sdk-browser';
 
-export type { AppDevice, HybridClient, ProfileIds } from '@hermeticacomms/sdk-browser';
+export type { AppDevice, HybridClient, ProfileIds } from '@hermeticor/sdk-browser';
 
 type Permission = { receive: string };
 type Handle = Promise<unknown> | unknown;
