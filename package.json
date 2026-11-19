@@ -1,6 +1,6 @@
 {
   "name": "@hermeticor/sdk-capacitor",
-  "version": "0.4.5",
+  "version": "0.4.6",
   "description": "Hermetica for Capacitor and Ionic: events, consent, native push tokens, in-app messages",
   "license": "MIT",
   "type": "module",
@@ -36,7 +36,7 @@
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
   "dependencies": {
-    "@hermeticor/sdk-browser": "^0.4.5"
+    "@hermeticor/sdk-browser": "^0.4.6"
   },
   "devDependencies": {
     "happy-dom": "^21.0.4",
